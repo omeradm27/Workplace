@@ -3,7 +3,7 @@ const db = require('../config/db')
 const bcrypt = require('bcryptjs');
 
 const Admin = db.define('Deneme', {
-    id: {
+    _id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
