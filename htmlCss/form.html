@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+
+<body>
+    <header>
+        <h1>Software</h1>
+        <nav id="topnav">
+            <a href=".\index.html">Home</a>
+            <a href=".\form.html">Forum</a>
+            <a href=".\styling.html">Contact Us</a>
+        </nav>
+    </header>
+    <form>
+
+        <table>
+            <tr>
+                <th> <label for="name">Name : </label></th>
+                <th><input type="text" id="name" name="name"></th>
+            </tr>
+            <tr>
+                <th><label for="surname">Surname : </label></th>
+                <th><input type="text" name="surname" id="Surname"></th>
+            </tr>
+            <tr>
+                <th> <label for="email">Email : </label></th>
+                <th><input type="text" name="email" id="email"></th>
+            </tr>
+            <tr>
+                <th> <label for="password">Password : </label></th>
+                <th><input type="password" name="password" id="password"></th>
+            </tr>
+            <tr>
+                <th> <label for="date">Date : </label></th>
+                <th><input type="date" name="date" id="date"></th>
+            </tr>
+            <tr>
+                <th> Gender</th>
+                <th>Male<input type="radio" name="gender" value="male">
+                    Female<input type="radio" name="gender" value="female">
+                    Other<input type="radio" name="gender" value="other"></th>
+            </tr>
+            <tr>
+                <th> Hobbies</th>
+                <th>Books<input type="checkbox" name="Hobbies" id="books">
+                    Cycling<input type="checkbox" name="Hobbies" id="cycling">
+                    Music<input type="checkbox" name="Hobbies" id="music">
+                    Other<input type="checkbox" name="Hobbies" id="otherHobbies"></th>
+            </tr>
+            <tr>
+                <th> Degree</th>
+                <th><select name="degree" id="degree">
+                        <option value="priSchool">Primary School</option>
+                        <option value="highSchool">High School</option>
+                        <option value="bachelor">Bachelor</option>
+                        <option value="master">Master</option>
+                        <option value="phd">Phd</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th> Describe Your Job</th>
+                <th><textarea name="jobDescribtion" id="jobDescribtion" placeholder="Describe your job in short words"
+                        cols="40"></textarea>
+                </th>
+            </tr>
+
+        </table>
+
+        <button type="Sıfırla">Sıfırla</button>
+        <button type="submit">Submit</button>
+
+
+    </form>
+</body>
+
+</html>

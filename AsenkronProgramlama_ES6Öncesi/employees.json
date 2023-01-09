@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Murat Bilginer",
+        "department":"Bilişim",
+        "salary":3000
+    },
+    {
+        "name":"Ömer Çetinadam",
+        "department":"Yazılım",
+        "salary":13000
+    },
+    {
+        "name":"Yusuf Çetinadam",
+        "department":"Lojistik",
+        "salary":23000
+    }
+]

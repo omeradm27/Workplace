@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+</head>
+<style>
+    /* 
+    .container {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        height: 1000px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-height: 500px;
+        background: black;
+        justify-content: space-around;
+        justify-content: flex-start;
+        justify-content: flex-start;
+        yatayda konumlalmak için
+        align-items: center;
+    }
+
+    .box {
+        text-align: center;
+        background-color: aliceblue;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 10px;
+    }
+
+    #box1 {
+        background-color: red;
+        order: 3;
+        flex-grow: 1;
+    }
+
+    #box2 {
+        background-color: blue;
+        order: 2;
+        flex-grow: 2; 
+        align-self:center ;
+        flex: 1;
+
+    }
+
+    #box3 {
+        background-color: green;
+        order: 1;
+         flex-grow: 3;
+         flex: 1;
+
+    } */
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing:border-box ;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        border: 1px solid black;
+        background-color: #a7a7a7;
+        padding: 10px;
+        width: 25%;
+    }
+
+    @media(max-width:768px){
+        .box{
+            width: 50%;
+        }
+    }
+    @media(max-width:500px){
+        .box{
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, reprehenderit.</p>
+        </div>
+        <div class="box" id="box2">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, reprehenderit.</p>
+        </div>
+        <div class="box" id="box3">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, reprehenderit.</p>
+        </div>
+        <div class="box" id="box4">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, reprehenderit.</p>
+        </div>
+    </div>
+</body>
+
+</html>

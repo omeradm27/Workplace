@@ -1,0 +1,25 @@
+#navbar{
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    overflow: hidden;
+    height: 80px;
+    text-align: center;
+
+}
+h1{
+    text-align: center;
+}
+#navbar ul li a{
+    padding: 0.5rem;
+}
+#training .items{
+    flex-direction: column;
+}
+#training .items .item{
+    width: 100%;
+}
+.projects .project{
+    flex-direction: column;
+    margin-bottom: 10px;
+}

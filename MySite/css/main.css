@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+html {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Navbar Section */
+
+#navbar {
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0.75rem;
+    height: 70px;
+}
+
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+#navbar ul li a {
+    padding: 0.5rem;
+}
+
+#navbar ul li a:hover {
+    background-color: #2f322e3b;
+    border-radius: 5px;
+}
+
+/* Home Section */
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid gray;
+}
+
+#home img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.name {
+    text-align: center;
+}
+
+#home .name h2 {
+    margin-bottom: 0.25rem;
+}
+
+#home .name p {
+    opacity: 0.6;
+    font-style: italic;
+    margin-bottom: 0. 5rem;
+}
+
+/* Training Section */
+
+#training {
+    color: white;
+    padding: 1rem;
+}
+
+#training .items {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+#training .items .item {
+    width: 25%;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#training .items .item:hover {
+    color: black;
+    opacity: 0.7;
+}
+
+/* Projects Section */
+
+#projects {
+    color: gray;
+    padding: 1rem;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.projects .project {
+    display: flex;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+
+/* Projects Image */
+
+.projects .project .project-image {
+
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+
+.projects .project .project-image img {
+    width: 90%;
+    border-radius: 5%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.projects .project .project-image span {
+    background-color: gray;
+    padding: 0.25rem;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    color: white;
+
+}
+
+
+/* Projects Information */
+
+.projects .project .project-info .title {
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.projects .project .project-info .project-description {
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.projects .project .project-info .project-instructor {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+}
+
+.projects .project .project-info .project-rating {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 0.25rem;
+}
+
+/* Contacts Section */
+
+#contacts {
+    color: #ffffff;
+    padding: 1rem;
+}
+
+#contacts .contact-form {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contacts .contact-form ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: 1rem;
+    align-self: center;
+}
+
+#contacts .contact-form ul li a {
+    padding: 1rem;
+    font-size: 2rem;
+   
+}
+#contacts .contact-form ul li a:hover{
+    opacity: 0.7   ;
+}

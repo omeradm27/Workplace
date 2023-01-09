@@ -1,0 +1,41 @@
+h1,
+p {
+    color: aquamarine;
+    background-color: brown;
+}
+
+/* #logo{
+    color: black;
+    background-color: blueviolet;
+}
+.info{
+    margin-top: 5px;
+    padding:15px;
+    color: rgb(1, 13, 13);
+    background-color: antiquewhite;
+} */
+
+#logo,
+.info {
+    margin-top: 5px;
+    padding: 15px;
+    color: rgb(1, 13, 13) !important;
+    background-color: antiquewhite;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li a {
+    color: brown;
+}
+.info .primary{
+    background-color: blueviolet;
+    color: yellow;
+}
+*{
+    font-size: 30px;
+    color: #16191D;
+
+}

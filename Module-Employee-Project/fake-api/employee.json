@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "name": "Ömer Çetinadam",
+      "department": "Bilişim",
+      "salary": 15000,
+      "id": 1
+    },
+    {
+      "name": "Yusuf",
+      "department": "Mutfak",
+      "salary": 12000,
+      "id": 2
+    },
+    {
+      "name": "Zafer",
+      "department": "Yazılım",
+      "salary": 12000,
+      "id": 3
+    }
+  ]
+}
