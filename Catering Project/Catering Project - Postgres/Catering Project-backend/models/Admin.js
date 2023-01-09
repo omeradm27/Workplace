@@ -6,7 +6,7 @@ const Admin = db.define('Deneme', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
         
     },
     name: {
