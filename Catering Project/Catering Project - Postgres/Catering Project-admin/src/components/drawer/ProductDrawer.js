@@ -125,7 +125,7 @@ const ProductDrawer = ({ id }) => {
                   className="border h-12 text-sm focus:outline-none block w-full bg-gray-100 dark:bg-white border-transparent focus:bg-white"
                   name="parent"
                   {...register('parent', {
-                    required: 'Product parent category is required!',
+                    //required: 'Product parent category is required!',
                   })}
                 >
                   <option value="" defaultValue hidden>

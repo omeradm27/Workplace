@@ -14,25 +14,35 @@ const addCategory = async (req, res) => {
   }
 };
 
-const addAllCategory = async (req, res) => {
-  try {
-    await Category.insertMany(req.body);
-    res.status(200).send({
-      message: 'Category Added successfully!',
-    });
-  } catch (err) {
-    res.status(500).send({
-      message: err.message,
-    });
-  }
-};
+// const addAllCategory = async (req, res) => {
+//   try {
+//     await Category.insert(req.body);
+//     res.status(200).send({
+//       message: 'Category Added successfully!',
+//     });
+//   } catch (err) {
+//     res.status(500).send({
+//       message: err.message,
+//     });
+//   }
+// };
 
 const getShowingCategory = async (req, res) => {
   try {
-    const categories = await Category.find({ status: 'Show' }).sort({
-      _id: -1,
-    });
-    res.send(categories);
+    //MongoDB Query
+    // const categories = await Category.find({ status: 'Show' }).sort({
+    //   _id: -1,
+    // });  
+    
+    //Postgres Query
+    const categories = await Category.findAll(
+      {
+        where: { status: 'SHOW' }
+      },
+      {
+        order: [['_id', 'DESC']]
+      }); 
+      res.send(categories);
   } catch (err) {
     res.status(500).send({
       message: err.message,
@@ -42,7 +52,10 @@ const getShowingCategory = async (req, res) => {
 
 const getAllCategory = async (req, res) => {
   try {
-    const categories = await Category.find({}).sort({ _id: -1 });
+
+    // const categories = await Category.find({}).sort({ _id: -1 });//MongoDB Request
+    const categories = await Category.findAll({ order: [['_id', 'DESC']] });//PostgreSql Request
+    // console.log(categories);
     res.send(categories);
   } catch (err) {
     res.status(500).send({
@@ -53,7 +66,8 @@ const getAllCategory = async (req, res) => {
 
 const getCategoryById = async (req, res) => {
   try {
-    const category = await Category.findById(req.params.id);
+    const id=req.params.id;
+    const category = await Category.findOne({where:{_id:id}});
     res.send(category);
   } catch (err) {
     res.status(500).send({
@@ -136,7 +150,7 @@ const deleteCategory = (req, res) => {
 
 module.exports = {
   addCategory,
-  addAllCategory,
+  // addAllCategory,
   getAllCategory,
   getShowingCategory,
   getCategoryById,

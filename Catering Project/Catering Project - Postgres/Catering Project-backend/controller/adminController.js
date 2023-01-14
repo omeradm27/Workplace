@@ -14,20 +14,18 @@ const registerAdmin = async (req, res) => {
           email: req.body.email
         }
       });
-      console.log("--------------------");
-      console.log(isAdded);
-    if (isAdded) {
-      return res.status(403).send({
-        message: 'This Email already Added!',
-      });
-    } else {
-      const newStaff = new Admin({
-        name: req.body.name,
-        email: req.body.email,
-        role: req.body.role,
-        password: bcrypt.hashSync(req.body.password),
-      });
-      const staff = await newStaff.save();
+      if (isAdded) {
+        return res.status(403).send({
+          message: 'This Email already Added!',
+        });
+      } else {
+        const newStaff = new Admin({
+          name: req.body.name,
+          email: req.body.email,
+          role: req.body.role,
+          password: bcrypt.hashSync(req.body.password),
+        });
+        const staff = await newStaff.save();
       const token = signInToken(staff);
       res.send({
         token,
@@ -47,7 +45,7 @@ const registerAdmin = async (req, res) => {
 
 const loginAdmin = async (req, res) => {
   try {
-    const admin = await Admin.findOne({ email: req.body.email });
+    const admin = await Admin.findOne({where:{ email: req.body.email }});
     if (admin && bcrypt.compareSync(req.body.password, admin.password)) {
       const token = signInToken(admin);
       res.send({

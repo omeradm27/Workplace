@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {
   addCategory,
-  addAllCategory,
+  // addAllCategory,
   getAllCategory,
   getShowingCategory,
   getCategoryById,
@@ -15,7 +15,8 @@ const {
 router.post('/add', addCategory);
 
 //add all category
-router.post('/all', addAllCategory);
+//TODO addAllCategory şimdilik gerkesiz gibi duruyor Ancak Toplu category ekleme Kısmı olabilir
+// router.post('/all', addAllCategory);
 
 //get only showing category
 router.get('/show', getShowingCategory);

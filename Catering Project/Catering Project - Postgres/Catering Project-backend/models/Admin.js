@@ -1,11 +1,12 @@
-const { Sequelize, DataTypes } = require('sequelize')
-const db = require('../config/db')
+const { Sequelize, DataTypes } = require('sequelize');
+const db = require('../config/db');
 const bcrypt = require('bcryptjs');
 
-const Admin = db.define('Deneme', {
+const Admin = db.define('Admins', {
     _id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER,    
         primaryKey: true,
+        notnull:true,
         autoIncrement: true,
         
     },
@@ -18,10 +19,13 @@ const Admin = db.define('Deneme', {
     email: {
         type: DataTypes.STRING
     },
-    // password: {
-    //     type: DataTypes.STRING
-    // },
+    password: {
+        type: DataTypes.STRING
+    },
     createdAt: {
+        type: DataTypes.DATE
+    },
+    updatedAt: {
         type: DataTypes.DATE
     }
 });

@@ -1,30 +1,42 @@
-const mongoose = require('mongoose');
+const { Sequelize, DataTypes } = require('sequelize');
+const db = require('../config/db');
 
-const categorySchema = new mongoose.Schema({
+const Category = db.define("Categories", {
+  _id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    notnull: true,
+    autoIncrement: true,
+  },
   parent: {
-    type: String,
-    required: true,
+    type: DataTypes.STRING,
+    notnull: true,
   },
   slug: {
-    type: String,
-    required: false,
+    type: DataTypes.STRING,
+    notnull: false,
   },
   type: {
-    type: String,
-    required: true,
+    type: DataTypes.STRING,
+    notnull: false,
   },
   icon: {
-    type: String,
-    required: false,
+    type: DataTypes.STRING,
+    notnull: false,
   },
   children: [{}],
   status: {
-    type: String,
-    enum: ['Show', 'Hide'],
-    default: 'Show',
+    type: DataTypes.STRING,
+    enum: ['SHOW', 'HIDE'],
+    default: 'SHOW',
   },
+  createdAt: {
+      type: DataTypes.DATE
+  },
+  updatedAt: {
+      type: DataTypes.DATE
+  }
 });
 
-const Category = mongoose.model('Category', categorySchema);
 
 module.exports = Category;

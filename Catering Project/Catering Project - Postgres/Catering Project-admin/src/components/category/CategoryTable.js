@@ -22,7 +22,8 @@ const CategoryTable = ({ categories }) => {
         {categories?.map((parent) => (
           <TableRow key={parent._id}>
             <TableCell className="font-semibold uppercase text-xs">
-              {parent._id.substring(20, 24)}
+             {/* {parent._id.substring(20, 24)} */}
+              {parent._id}
             </TableCell>
             <TableCell>
               <Avatar
@@ -34,14 +35,14 @@ const CategoryTable = ({ categories }) => {
 
             <TableCell className="font-medium text-sm">
               <div className="flex flex-row">
-                {parent?.children?.map((child, i) => (
+                {/* {parent?.children?.map((child, i) => (
                   <span
                     key={i + 1}
                     className="bg-gray-200 mr-2 border-0 text-gray-500 rounded-full inline-flex items-center justify-center px-2 py-1 text-xs font-semibold font-serif mt-2 dark:bg-gray-700 dark:text-gray-300"
                   >
                     {child}
                   </span>
-                ))}
+                ))} */}
               </div>
             </TableCell>
             <TableCell className="text-sm ">{parent.children.length}</TableCell>
