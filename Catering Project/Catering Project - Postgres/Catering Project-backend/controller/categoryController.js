@@ -78,7 +78,8 @@ const getCategoryById = async (req, res) => {
 
 const updateCategory = async (req, res) => {
   try {
-    const category = await Category.findById(req.params.id);
+    //const category = await Category.findById(req.params.id);
+    const category = await Category.findOne({where:{_id:req.params.id}});
     if (category) {
       category.parent = req.body.parent;
       // category.slug = req.body.slug;
@@ -93,42 +94,82 @@ const updateCategory = async (req, res) => {
   }
 };
 
-const updateStatus = (req, res) => {
-  const newStatus = req.body.status;
+const updateStatus = async(req, res) => {
+    const newStatus = req.body.status;
 
-  Category.updateOne(
-    { _id: req.params.id },
-    {
-      $set: {
-        status: newStatus,
-      },
-    },
-    (err) => {
-      if (err) {
-        res.status(500).send({
-          message: err.message,
-        });
-      } else {
+    /* const category_one = await Category.findOne({ where: {_id: req.params.id} })
+    if(category_one){
+        category_one.status = newStatus
+        await category_one.save()
         res.status(200).send({
-          message: `Category ${newStatus} Successfully!`,
+        message: `Category ${newStatus} Successfully!`,
         });
-      }
-    }
-  );
+    } else {
+        res.status(500).send({
+        message: err.message,
+        });
+    } */
+
+    Category.update(
+        { status: newStatus },
+        { where: { _id: req.params.id } }
+    ).then(result => {
+        res.status(200).send({
+        message: `Category ${newStatus} Successfully!`,
+        });
+    }).catch(err => {
+        res.status(500).send({
+        message: err.message,
+        });
+    })
+  
+
+    /* Category.updateOne(
+        { _id: req.params.id },
+        {
+            $set: {
+                status: newStatus,
+            },
+        },
+        (err) => {
+            if (err) {
+                res.status(500).send({
+                message: err.message,
+                });
+            } else {
+                res.status(200).send({
+                message: `Category ${newStatus} Successfully!`,
+                });
+            }
+        }
+    ); */
 };
 
 const deleteCategory = (req, res) => {
-  Category.deleteOne({ _id: req.params.id }, (err) => {
-    if (err) {
-      res.status(500).send({
-        message: err.message,
-      });
-    } else {
-      res.status(200).send({
+    Category.destroy(
+        { where: { _id: req.params.id } }
+    ).then(res => {
+        res.status(200).send({
         message: 'Category Deleted Successfully!',
-      });
-    }
-  });
+        });
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message,
+        });
+    })
+
+
+    /* Category.deleteOne({ _id: req.params.id }, (err) => {
+        if (err) {
+            res.status(500).send({
+                message: err.message,
+            });
+        } else {
+            res.status(200).send({
+                message: 'Category Deleted Successfully!',
+            });
+        }
+    }); */
 
   //This is for delete children category
   // Category.updateOne(
